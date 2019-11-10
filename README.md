@@ -10,9 +10,9 @@ run `gunicorn -D -w 1 -b 0.0.0.0:5010 homebridge_midware_app:app`
 currently accept below 3 methods, "on/off/status":
 ```json
 {
-  "on_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/on",
-  "off_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/off",
-  "status_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/status"
+  "on_url": "http://<IP>/switch.phicomm_dc1_switch0?action=on",
+  "off_url": "http://<IP>/switch.phicomm_dc1_switch0?action=off",
+  "status_url": "http://<IP>/switch.phicomm_dc1_switch0?action=status"
 }
 ```
 
@@ -24,9 +24,9 @@ config demo:
     "name": "phicomm_dc1",
     "switchHandling": "no",
     "http_method": "GET",
-    "on_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/on",
-    "off_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/off",
-    "status_url": "http://192.168.31.170/switch-phicomm_dc1_switch0/status",
+    "on_url": "http://<IP>/switch.phicomm_dc1_switch0?action=on",
+    "off_url": "http://<IP>/switch.phicomm_dc1_switch0?action=off",
+    "status_url": "http://<IP>/switch.phicomm_dc1_switch0?action=status",
     "status_on": "1",
     "status_off": "0",
     "service": "Switch",
