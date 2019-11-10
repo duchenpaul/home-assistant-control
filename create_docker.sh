@@ -7,7 +7,7 @@ WORKDIR /app
 RUN pip install --trusted-host pypi.douban.com -i http://pypi.douban.com/simple -r /app/requirements.txt 
 RUN pip install --trusted-host pypi.douban.com -i http://pypi.douban.com/simple gunicorn
 EXPOSE 5000
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "${APP_NAME}:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "homebridge_midware_app:app"]
 EOF
 
 CONTAINER_EXCHANGE_DIR=/app/logs
